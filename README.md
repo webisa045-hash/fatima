@@ -1,6 +1,6 @@
 # Fatima Portfolio
 
-This project is a Vite + React portfolio site deployed to GitHub Pages.
+This project is a Vite + React portfolio site configured for Netlify deployment.
 
 ## Development
 
@@ -13,19 +13,26 @@ pnpm run dev
 
 ## Deployment
 
-This repo is configured for `gh-pages` branch deployment.
+This repo is configured for Netlify.
 
 ```bash
-npm run deploy
+pnpm install
+pnpm run build
 ```
 
-That command builds the Vite app and publishes the `dist/` output to the `gh-pages` branch.
+Netlify should use these settings:
 
-In the repository settings, set **Pages** to use:
+- **Build command:** `pnpm run build`
+- **Publish directory:** `dist`
 
-- **Branch:** `gh-pages`
-- **Folder:** `/ (root)`
+SPA routing is handled by `public/_redirects`, and Netlify build settings are defined in `netlify.toml`.
 
-The published site URL is:
+## Netlify setup
 
-`https://webisa045-hash.github.io/fatima`
+1. Push this repo to GitHub.
+2. In Netlify, choose **Add new site** and import the GitHub repository.
+3. Confirm the build command is `pnpm run build`.
+4. Confirm the publish directory is `dist`.
+5. Deploy the site.
+
+After deployment, all routes like `/about` and `/projects` should work directly and on refresh.
