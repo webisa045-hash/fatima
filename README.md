@@ -13,6 +13,19 @@ pnpm run dev
 
 ## Deployment
 
-GitHub Pages must deploy the built `dist/` output, not the repository root source files. This repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds the app and publishes it correctly.
+This repo is configured for `gh-pages` branch deployment.
 
-In the repository settings, set **Pages** to use **GitHub Actions** as the source. After that, every push to `main` will trigger a new deployment.
+```bash
+npm run deploy
+```
+
+That command builds the Vite app and publishes the `dist/` output to the `gh-pages` branch.
+
+In the repository settings, set **Pages** to use:
+
+- **Branch:** `gh-pages`
+- **Folder:** `/ (root)`
+
+The published site URL is:
+
+`https://webisa045-hash.github.io/fatima`
