@@ -4,6 +4,9 @@ import { ArrowRight, Star, Globe, TrendingUp } from 'lucide-react';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const profileImageFront = `${import.meta.env.BASE_URL}fatima1.jpg`;
+  const profileImageBack = `${import.meta.env.BASE_URL}fatima3.jpg`;
+
   return (
     <div className="home fade-in">
       <header className="hero">
@@ -26,10 +29,10 @@ const Home: React.FC = () => {
             <div className="flip-card">
               <div className="flip-card-inner">
                 <div className="flip-card-front grey-blob">
-                  <img src="/fatima1.jpg" alt="Fatima Farah Ali" className="profile-img" />
+                  <img src={profileImageFront} alt="Fatima Farah Ali" className="profile-img" />
                 </div>
                 <div className="flip-card-back grey-blob">
-                  <img src="/fatima3.jpg" alt="Fatima Farah Ali" className="profile-img" />
+                  <img src={profileImageBack} alt="Fatima Farah Ali" className="profile-img" />
                 </div>
               </div>
             </div>
